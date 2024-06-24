@@ -17,12 +17,10 @@ popular [Monolog](https://seldaek.github.io/monolog/) package.
 
 Feel free to install any PSR-3 compatible logger alongside the library.
 
-Usage
------
+Installation
+------------
 
-> Exemples below are leveraging the usage of the Monolog library.
-
-### Installation
+> Examples below are leveraging the usage of the [Monolog](https://seldaek.github.io/monolog/) library.
 
 Install the package using [Composer](https://getcomposer.org/) and add you preferred logging library implementation:
 
@@ -31,6 +29,9 @@ composer require themosis/log monolog/monolog
 ```
 
 The above code is going to install the `themosis/log` package as well as the `monolog/monolog` one.
+
+Usage
+-----
 
 ### Register a logger
 
