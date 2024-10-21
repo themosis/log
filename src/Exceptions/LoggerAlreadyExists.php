@@ -10,5 +10,6 @@ namespace Themosis\Components\Log\Exceptions;
 
 use RuntimeException;
 
-final class LoggerAlreadyExists extends RuntimeException {
+final class LoggerAlreadyExists extends RuntimeException
+{
 }

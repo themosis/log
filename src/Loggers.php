@@ -10,8 +10,9 @@ namespace Themosis\Components\Log;
 
 use Psr\Log\LoggerInterface;
 
-interface Loggers {
-	public function add( Channel $channel, LoggerInterface $logger ): void;
+interface Loggers
+{
+    public function add(Channel $channel, LoggerInterface $logger): void;
 
-	public function get( Channel $channel ): LoggerInterface;
+    public function get(Channel $channel): LoggerInterface;
 }

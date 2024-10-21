@@ -10,5 +10,6 @@ namespace Themosis\Components\Log\Exceptions;
 
 use RuntimeException;
 
-final class LoggerNotFound extends RuntimeException {
+final class LoggerNotFound extends RuntimeException
+{
 }

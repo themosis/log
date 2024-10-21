@@ -14,42 +14,46 @@ use Themosis\Components\Log\Exceptions\LoggerAlreadyExists;
 use Themosis\Components\Log\Exceptions\LoggerNotFound;
 use Themosis\Components\Log\InMemoryLoggers;
 
-final class LoggersTest extends TestCase {
-	#[Test]
-	public function it_can_store_and_retrieve_loggers_from_in_memory_repository(): void {
-		$channel      = new Channel( 'app' );
-		$dummy_logger = new DummyLogger();
+final class LoggersTest extends TestCase
+{
+    #[Test]
+    public function it_can_store_and_retrieve_loggers_from_in_memory_repository(): void
+    {
+        $channel = new Channel('app');
+        $dummyLogger = new DummyLogger();
 
-		$loggers = new InMemoryLoggers();
-		$loggers->add( $channel, $dummy_logger );
+        $loggers = new InMemoryLoggers();
+        $loggers->add($channel, $dummyLogger);
 
-		$this->assertSame( $dummy_logger, $loggers->get( $channel ) );
-	}
+        $this->assertSame($dummyLogger, $loggers->get($channel));
+    }
 
-	#[Test]
-	public function it_can_not_override_existing_loggers(): void {
-		$channel      = new Channel( 'app' );
-		$dummy_logger = new DummyLogger();
+    #[Test]
+    public function it_can_not_override_existing_loggers(): void
+    {
+        $channel = new Channel('app');
+        $dummyLogger = new DummyLogger();
 
-		$loggers = new InMemoryLoggers();
-		$loggers->add( $channel, $dummy_logger );
+        $loggers = new InMemoryLoggers();
+        $loggers->add($channel, $dummyLogger);
 
-		$other_channel      = new Channel( 'app' );
-		$other_dummy_logger = new DummyLogger();
+        $otherChannel = new Channel('app');
+        $otherDummyLogger = new DummyLogger();
 
-		$this->expectException( LoggerAlreadyExists::class );
+        $this->expectException(LoggerAlreadyExists::class);
 
-		$loggers->add( $other_channel, $other_dummy_logger );
-	}
+        $loggers->add($otherChannel, $otherDummyLogger);
+    }
 
-	#[Test]
-	public function it_can_throw_exception_when_accessing_unregistered_logger(): void {
-		$loggers = new InMemoryLoggers();
+    #[Test]
+    public function it_can_throw_exception_when_accessing_unregistered_logger(): void
+    {
+        $loggers = new InMemoryLoggers();
 
-		$channel = new Channel( 'not-registered' );
+        $channel = new Channel('not-registered');
 
-		$this->expectException( LoggerNotFound::class );
+        $this->expectException(LoggerNotFound::class);
 
-		$loggers->get( $channel );
-	}
+        $loggers->get($channel);
+    }
 }

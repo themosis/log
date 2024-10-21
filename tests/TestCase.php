@@ -11,5 +11,6 @@ namespace Themosis\Components\Log\Tests;
 use PHPUnit\Framework\TestCase as FrameworkTestCase;
 
 // phpcs:disable:Universal.Classes.RequireFinalClass
-class TestCase extends FrameworkTestCase {
+class TestCase extends FrameworkTestCase
+{
 }
