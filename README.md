@@ -9,11 +9,9 @@ Themosis Log
 
 The Themosis log component is a lightweight logging library for PHP.
 
-The component is only promoting the PSR-3 interface and provides a simple repository interface and concrete
-in-memory implementation to manage PSR-3 compatible loggers.
+The component is only promoting the PSR-3 interface and provides a simple repository interface and concrete in-memory implementation to manage PSR-3 compatible loggers.
 
-By default, the library is not installing any logger implementation but is suggesting the usage of the
-popular [Monolog](https://seldaek.github.io/monolog/) package.
+By default, the library is not installing any logger implementation but is suggesting the usage of the popular [Monolog](https://seldaek.github.io/monolog/) package.
 
 Feel free to install any PSR-3 compatible logger alongside the library.
 
@@ -67,5 +65,4 @@ $applicationLogger->info('An applicaton event just occured...');
 
 > The repository will throw a `LoggerNotFound` exception if the logger is not registered and you're trying to retrieve it.
 
-If you intend to always expect a logger to be returned from the repository even if not registered, you can 
-simply create your own repository by using the `Themosis\Components\Log\Loggers` interface.
+If you intend to always expect a logger to be returned from the repository even if not registered, you can simply create your own repository by using the `Themosis\Components\Log\Loggers` interface.
