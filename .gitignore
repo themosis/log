@@ -10,3 +10,6 @@ composer.lock
 /coverage
 /vendor
 /node_modules
+*#
+*.#*
+*~
